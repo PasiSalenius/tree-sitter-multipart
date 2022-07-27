@@ -1,11 +1,65 @@
 [
   {
-    "type": "source_file",
+    "type": "body",
     "named": true,
     "fields": {}
   },
   {
-    "type": "hello",
+    "type": "header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "header_name",
+          "named": true
+        },
+        {
+          "type": "header_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "body",
+          "named": true
+        },
+        {
+          "type": "boundary_delimiter",
+          "named": true
+        },
+        {
+          "type": "header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ":",
     "named": false
+  },
+  {
+    "type": "boundary_delimiter",
+    "named": true
+  },
+  {
+    "type": "header_name",
+    "named": true
+  },
+  {
+    "type": "header_value",
+    "named": true
   }
 ]
