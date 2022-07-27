@@ -8,18 +8,20 @@ module.exports = grammar({
       seq(
         repeat1(
           seq(
-            seq($.boundary_delimiter, $._newline),
+            $.delimiter_line,
             repeat($.header),
             $._newline,
             $.body,
           ),
         ),
-        $.boundary_delimiter,
-        optional(choice($._data, $._newline)),
+        $.delimiter_line,
       ),
     ),
 
-    boundary_delimiter: $ => /--.+/,
+    delimiter_line: $ =>
+      seq($.delimiter, $._newline),
+
+    delimiter: $ => /--.+/,
 
     header: $ =>
       seq($.header_name, ':', $._whitespace, $.header_value, $._newline),

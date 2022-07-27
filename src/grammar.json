@@ -13,17 +13,8 @@
                 "type": "SEQ",
                 "members": [
                   {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "boundary_delimiter"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "_newline"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "delimiter_line"
                   },
                   {
                     "type": "REPEAT",
@@ -45,28 +36,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "boundary_delimiter"
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "_data"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "_newline"
-                    }
-                  ]
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "name": "delimiter_line"
             }
           ]
         },
@@ -75,7 +45,20 @@
         }
       ]
     },
-    "boundary_delimiter": {
+    "delimiter_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "delimiter"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "delimiter": {
       "type": "PATTERN",
       "value": "--.+"
     },
