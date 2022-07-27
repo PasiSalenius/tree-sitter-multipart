@@ -1,0 +1,27 @@
+{
+  "name": "tree-sitter-multipart",
+  "version": "0.1.0",
+  "description": "Tree-sitter parser for HTTP multipart",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PasiSalenius/tree-sitter-multipart.git"
+  },
+  "keywords": [
+    "tree-sitter",
+    "http",
+    "multipart"
+  ],
+  "author": "Pasi Salenius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PasiSalenius/tree-sitter-multipart/issues"
+  },
+  "homepage": "https://github.com/PasiSalenius/tree-sitter-multipart#readme",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.6"
+  }
+}
