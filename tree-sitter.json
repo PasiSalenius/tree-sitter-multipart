@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "multipart",
+      "camelcase": "Multipart",
+      "title": "Multipart",
+      "scope": "source.multipart",
+      "file-types": [
+        "multipart"
+      ],
+      "injection-regex": "^multipart$",
+      "class-name": "TreeSitterMultipart"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter parser for HTTP multipart",
+    "authors": [
+      {
+        "name": "Pasi Salenius",
+        "url": "https://github.com/PasiSalenius"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/PasiSalenius/tree-sitter-multipart.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
