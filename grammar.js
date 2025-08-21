@@ -31,8 +31,8 @@ module.exports = grammar({
 
     body: $ => repeat1(choice($._data, $._newline)),
 
-    _whitespace: _ => /\s+/,
-    _newline: _ => /\r?\n/,
+    _whitespace: _ => /[ \t]+/,
+    _newline: _ => choice('\n', '\r', '\r\n', '\0'),
     _data: _ => /.+/,
   }
 });

@@ -114,11 +114,28 @@
     },
     "_whitespace": {
       "type": "PATTERN",
-      "value": "\\s+"
+      "value": "[ \\t]+"
     },
     "_newline": {
-      "type": "PATTERN",
-      "value": "\\r?\\n"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "STRING",
+          "value": "\r"
+        },
+        {
+          "type": "STRING",
+          "value": "\r\n"
+        },
+        {
+          "type": "STRING",
+          "value": "\u0000"
+        }
+      ]
     },
     "_data": {
       "type": "PATTERN",
