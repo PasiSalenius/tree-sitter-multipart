@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/PasiSalenius/tree-sitter-multipart#readme",
   "devDependencies": {
-    "tree-sitter-cli": "^0.25.8"
+    "tree-sitter-cli": "^0.20.6"
   }
 }
