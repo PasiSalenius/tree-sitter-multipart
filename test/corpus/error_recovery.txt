@@ -1,0 +1,48 @@
+========================
+Empty file
+========================
+
+---
+
+(source_file)
+
+========================
+Text without delimiters
+========================
+just some text
+
+---
+
+(source_file
+  (ERROR))
+
+========================
+Single delimiter only
+========================
+--boundary
+
+---
+
+(source_file
+  (ERROR
+    (delimiter_line
+      (delimiter))))
+
+========================
+Missing closing delimiter
+========================
+--boundary
+Content-Disposition: form-data; name="field"
+
+value
+
+---
+
+(source_file
+  (ERROR
+    (delimiter_line
+      (delimiter))
+    (header
+      (header_name)
+      (header_value))
+    (body)))

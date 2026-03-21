@@ -1,0 +1,199 @@
+========================
+Single part with header
+========================
+--boundary
+Content-Disposition: form-data; name="field"
+
+value
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Multiple parts
+========================
+--boundary
+Content-Disposition: form-data; name="field1"
+
+value1
+--boundary
+Content-Disposition: form-data; name="field2"
+
+value2
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Part with multiple headers
+========================
+--boundary
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+file content here
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Part with multiline body
+========================
+--boundary
+Content-Disposition: form-data; name="text"
+
+line one
+line two
+line three
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Three parts
+========================
+--abc
+Content-Disposition: form-data; name="a"
+
+1
+--abc
+Content-Disposition: form-data; name="b"
+
+2
+--abc
+Content-Disposition: form-data; name="c"
+
+3
+--abc--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Long boundary string
+========================
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="field"
+
+data
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Part without headers
+========================
+--boundary
+
+just body content
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (body)
+  (delimiter_line
+    (delimiter)))
+
+========================
+Part with empty body
+========================
+--boundary
+Content-Disposition: form-data; name="empty"
+
+
+--boundary--
+
+---
+
+(source_file
+  (delimiter_line
+    (delimiter))
+  (header
+    (header_name)
+    (header_value))
+  (body)
+  (delimiter_line
+    (delimiter)))
